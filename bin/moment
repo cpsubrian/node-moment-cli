@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+
+var program = require('commander')
+  , moment = require('moment')
+  , pkg = require('../package.json');
+
+program
+  .version(pkg.version)
+  .parse(process.argv);
+
+console.log('We did something!');
