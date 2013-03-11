@@ -1,7 +1,7 @@
 moment-cli
 ==========
 
-CLI for printing dates via momentjs.
+CLI for printing dates via [momentjs](http://momentjs.com/).
 
 Install
 -------

@@ -6,6 +6,51 @@ var program = require('commander')
 
 program
   .version(pkg.version)
+  .usage('<input> [options]')
+  .option('-i --inputFormat <format>', 'e.g: "MM-DD-YYYY". Special handling for "unix".')
+  .option('-f --format <format>', 'Output format. See momentjs docs for options.')
+  .option('-t --timeago', 'Output in `timeago` format (fromNow).')
+  .option('-c --calendar', 'Output in `calendar` format.')
+  .option('-u --unix', 'Output a unix timestamp (secs since Epoch).')
+  .option('-j --js', 'Ouput a JavaScript timestamp (ms since Epoch).')
   .parse(process.argv);
 
-console.log('We did something!');
+var input = program.args[0] || Date.now();
+var inputInt = parseInt(input, 10);
+var isNumeric = inputInt.toString() === input;
+
+var date;
+if (program.inputFormat) {
+  if (program.inputFormat === 'unix') {
+    date = moment.unix(inputInt);
+  }
+  else {
+    date = moment(input, program.inputFormat);
+  }
+}
+else if (isNumeric) {
+  date = moment(inputInt);
+}
+else {
+  date = moment(input);
+}
+
+var output = console.log.bind(console);
+if (program.format) {
+  output(date.format(program.format));
+}
+else if (program.timeago) {
+  output(date.fromNow());
+}
+else if (program.calendar) {
+  output(date.calendar());
+}
+else if (program.unix) {
+  output(date.unix());
+}
+else if (program.js) {
+  output(date.valueOf());
+}
+else {
+  output(date.format());
+}
