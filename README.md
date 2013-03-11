@@ -3,8 +3,6 @@ moment-cli
 
 CLI for printing dates via momentjs.
 
-[![build status](https://secure.travis-ci.org/cpsubrian/moment-cli.png)](http://travis-ci.org/cpsubrian/moment-cli)
-
 Install
 -------
 
