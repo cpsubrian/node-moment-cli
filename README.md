@@ -22,12 +22,12 @@ $ moment --help
 
     -h, --help                 output usage information
     -V, --version              output the version number
-    -i --inputFormat <format>  e.g: "MM-DD-YYYY". Special handling for "unix".
-    -f --format <format>       Output format. See momentjs docs for options.
-    -t --timeago               Output in `timeago` format (fromNow).
-    -c --calendar              Output in `calendar` format.
-    -u --unix                  Output a unix timestamp (secs since Epoch).
-    -j --js                    Ouput a JavaScript timestamp (ms since Epoch).
+    -i, --inputFormat <format>  e.g: "MM-DD-YYYY". Special handling for "unix".
+    -f, --format <format>       Output format. See momentjs docs for options.
+    -t, --timeago               Output in `timeago` format (fromNow).
+    -c, --calendar              Output in `calendar` format.
+    -u, --unix                  Output a unix timestamp (secs since Epoch).
+    -j, --js                    Ouput a JavaScript timestamp (ms since Epoch).
 ```
 
 Examples
