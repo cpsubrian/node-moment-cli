@@ -51,6 +51,9 @@ else if (program.unix) {
 else if (program.js) {
   output(date.valueOf());
 }
-else {
+else if (isNumeric) {
   output(date.format());
+}
+else {
+  output(date.valueOf());
 }
