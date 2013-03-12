@@ -64,7 +64,7 @@ $ moment 1318781876 -i unix
 **Convert a date string into a JavaScript timestamp**
 
 ```
-$ moment 03/11/2011 -j
+$ moment 03/11/2011
 1299830400000
 ```
 
